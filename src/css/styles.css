@@ -31,3 +31,37 @@ li.selected {
     border-top: 1px solid #6B90DA;
     margin-bottom: 15px;
 }
+#footer-bar {
+    border-top: 1px solid #6B90DA;
+    margin-top: 15px;
+}
+div.content {
+    margin: 0 10px 10px 10px;
+    height: 1000px;
+    border: 2px solid #EBEFF9;
+    border-width: 0 2px 0 2px;
+    min-height: 500px;
+}
+div.body {
+    margin: 10px;
+}
+
+h2 {
+    background-color: #EBEFF9;
+    padding: 5px;
+    margin: 0;
+}
+
+input[type=text] {
+    width: 100%;
+}
+
+form table tr td.first {
+    padding-right: 15px;
+}
+div.form {
+
+    border: 1px solid #DDD;
+    padding: 20px;
+    with: auto;
+}
