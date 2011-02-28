@@ -1,5 +1,9 @@
 <?php
 
+
+
+
+
 class PubSig {
     var $public_key;
     var $key_handle;
