@@ -1,8 +1,9 @@
 /* CORE */
 
-body, td, th {
-	margin: 15px;
-
+body {
+    margin: 15px;
+}
+body, td, th, input, textarea {
     font-family: Arial, sans-serif;
     direction: ltr;
 }
@@ -28,11 +29,11 @@ li.selected {
 }
 
 #header-bar {
-    border-top: 1px solid #6B90DA;
+    border-top: 1px solid #c0c0c0;
     margin-bottom: 15px;
 }
 #footer-bar {
-    border-top: 1px solid #6B90DA;
+    border-top: 1px solid #c0c0c0;
     margin-top: 15px;
 }
 div.content {
@@ -56,12 +57,19 @@ input[type=text] {
     width: 100%;
 }
 
-form table tr td.first {
+table tr td.first {
     padding-right: 15px;
 }
-div.form {
+form div.outline {
 
     border: 1px solid #DDD;
-    padding: 20px;
-    with: auto;
+    display: inline-block;
+}
+form div.body {
+    padding: 10px;
+}
+form h3 {
+    background-color: #DDD;
+    margin: 0;
+    padding: 5px;
 }
