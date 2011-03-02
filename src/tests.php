@@ -1,8 +1,63 @@
 <?php
 include("pubsig.class.php");
-if (!extension_loaded('openssl')) die("OpenSSL extension not loaded");
+//if (!extension_loaded('openssl')) die("OpenSSL extension not loaded");
+//zlib1.dll
 
 set_time_limit(0);
+
+$jcert_ca = array("jcert" =>
+
+              array(
+
+              "certificate" =>
+                array("name" => "Torrentula Torrents",
+                      "domain" => "torrentula.com",
+                      "website" => "http://www.torrentula.eu/",
+                      "repository_url" => "http://www.torrentula.eu/pubsig/certs/",
+                      "json_rpc_url" => "http://www.torrentula.eu/json-rpc",
+                      "avatar" => "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABhJREFUeF4FwTEBAAAAgjD7FzESWfjYdgwEoAJ4lTsaxgAAAABJRU5ErkJggg==",
+                      "timestamp" => "1298996666"),
+
+              "certificate_signature" => "<signature of the certificate key>",
+
+              "trusted_certificates" =>
+                array(
+                  array("fingerprint" => sha1("<public key of certificate abc>"),
+                        "timestamp" => "1298996666"),
+
+                  array("fingerprint" => sha1("<public key of certificate def>"),
+                        "timestamp" => "1298996666")),
+
+              "trusted_certificates_signature" => "<signature of the trusted_certificates key>",
+
+              "signatures" =>
+                array(
+                  array("fingerprint" => sha1("<public key of certificate abc>"),
+                        "timestamp" => "1298996666",
+                        "signature" => sha1("<serialisation of signatures hij>")),
+                  array("fingerprint" => sha1("<public key of certificate abc>"),
+                        "timestamp" => "1298996666",
+                        "signature" => sha1("<serialisation of signatures hij>"))),
+
+              "signatures_signature" => "<signature of the signatures key>"
+              ));
+
+
+// Save to jcert file
+$jc = new JCert();
+$jc->load_array($jcert_ca);
+$jc->save_to_file("certs/" . $jc->fingerprint() . ".jcert");
+print "Saved certificate to " . "certs/" . $jc->fingerprint() . ".jcert";
+exit;
+
+// Load from jcert file
+$jc = new JCert();
+$jcert_ca_test = $jc->load_from_file($fn = "certs/e39a897c180d7cb1e64f7b9e8e0a48944d65b2aa.jcert");
+print "Loaded certificate $fn\n";
+print_r($jcert_ca_test);
+exit;
+
+exit;
 
 $private_key_filename = str_replace("\\", "/", dirname(__FILE__)) . "/keys/private_key.pem";
 $private_key_passphrase = "abc123";
@@ -15,6 +70,8 @@ exit;
 
 //if (!$ps->load_private_key_file($private_key_filename, $private_key_passphrase)) die("Error loading private key from file");
 
+
+/*
 function load_certificate($p) {
 
 
@@ -44,6 +101,7 @@ if (!$ps->load_private_key_file($private_key_filename, $private_key_passphrase))
 create_certificate(array(
     "public_key" => $ps->public_key)
 );
+
 
 print "-----------\n";
 $test = $ps->public_key();
@@ -78,5 +136,5 @@ $ps = new PubSig();
 if (!$ps->load_private_key_file($private_key_filename, $private_key_passphrase)) die("Error loading private key from file");
 //sdssdasdas
 //$cert = new JCert();
-
+*/
 ?>
