@@ -7,25 +7,16 @@ body, td, th, input, textarea {
     font-family: Arial, sans-serif;
     direction: ltr;
 }
-ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-li {
-    padding: 5px;
-    margin: 0;
-}
+
+
 
 div.menu {
-    border: 2px solid #EBEFF9;
-    border-width: 0 2px 0 0;
     min-height: 500px;
 }
 
-li.selected {
-    background-color: #EBEFF9;
-    font-weight: bold;
+table tr td.menu {
+    border: 2px solid #EBEFF9;
+    border-width: 2px 2px 2px 2px;
 }
 
 #header-bar {
@@ -37,10 +28,10 @@ li.selected {
     margin-top: 15px;
 }
 div.content {
-    margin: 0 10px 10px 10px;
+    margin: 0 10px 0px 10px;
     height: 1000px;
     border: 2px solid #EBEFF9;
-    border-width: 0 2px 0 2px;
+    border-width: 0 2px 2px 2px;
     min-height: 500px;
 }
 div.body {
