@@ -69,7 +69,16 @@
                     //(this.checked ? this.disabled(true) : this.disabled(fal)
                 });
 
-                $(".tabs").tabs();
+                $('.tabs').tabs({
+                    select:  function(event, ui) {
+                       if (ui.panel.id == "manage") {
+                           load_grid();
+                       }
+                    }
+                   // fx: { opacity: 'toggle' },
+                   // cookie: { expires: 30 }
+                });
+
             });
         </script>
         <!-- Master CSS - Overrides all others -->

@@ -1,8 +1,14 @@
 <script type="text/javascript">
+var xg;
 
-Ext.onReady(function(){
+Ext.onReady(function() {
 
-    var xg = Ext.grid;
+});
+
+function load_grid(){
+    if (xg) return;
+
+    xg = Ext.grid;
 
     var reader = new Ext.data.ArrayReader({}, [
        {name: 'name'},
@@ -68,7 +74,7 @@ Ext.onReady(function(){
         ],
         renderTo: document.getElementById('listview')
     });
-});
+};
 
 
 /*
@@ -101,11 +107,13 @@ Ext.grid.lv_data = [
     ['EZTV', 'eztv.it', 'http://www.eztv.it', 'xyz123', 'Yes', '03/03 12:00am'],
     ['isoHunt', 'isohunt.com', 'http://www.isohunt.com', 'xyz123', 'Yes', '02/03 12:00am'],
     ['Torrentz', 'torrentz.eu', 'http://www.torrentz.eu', 'xyz123', 'No', '03/05 12:00am']];
-
+/*
 // Add list view data
 for(var i = 0; i < Ext.grid.lv_data.length; i++){
     Ext.grid.lv_data[i].push('the data');
 }
+*/
+
 </script>
 <h2>Manage Certificates</h2>
 <div class="body">
