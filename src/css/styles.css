@@ -1,24 +1,13 @@
-/* CORE */
-
+/*********************************************************
+ * GLOBAL
+ *********************************************************/
 body {
-    margin: 15px;
+    margin: 5px 15px 15px 15px;
 }
 body, td, th, input, textarea {
     font-family: Arial, sans-serif;
     direction: ltr;
 }
-
-
-
-div.menu {
-    min-height: 500px;
-}
-
-table tr td.menu {
-    border: 2px solid #EBEFF9;
-    border-width: 2px 2px 2px 2px;
-}
-
 #header-bar {
     border-top: 1px solid #c0c0c0;
     margin-bottom: 15px;
@@ -27,40 +16,43 @@ table tr td.menu {
     border-top: 1px solid #c0c0c0;
     margin-top: 15px;
 }
-div.content {
+/*********************************************************
+ * MANAGEMENT CONSOLE
+ *********************************************************/
+div.console table tr td.menu {
+    border: 2px solid #EBEFF9;
+    border-width: 2px 2px 2px 2px;
+}
+div.console div.content {
     margin: 0 10px 0px 10px;
     height: 1000px;
     border: 2px solid #EBEFF9;
     border-width: 0 2px 2px 2px;
+}
+div.console div.body {
+    padding: 20px;
+    min-width: 700px;
     min-height: 500px;
 }
-div.body {
-    margin: 10px;
-}
-
-h2 {
+div.console h2 {
     background-color: #EBEFF9;
     padding: 5px;
     margin: 0;
+    font-size: 15pt;
 }
-
-input[type=text] {
-    width: 100%;
-}
-
-table tr td.first {
-    padding-right: 15px;
-}
-form div.outline {
-
-    border: 1px solid #DDD;
-    display: inline-block;
-}
-form div.body {
-    padding: 10px;
-}
-form h3 {
+div.console h3 {
     background-color: #DDD;
     margin: 0;
     padding: 5px;
+    font-size: 13pt;
+}
+div.console input[type=text] {
+    width: 100%;
+}
+div.console table tr td.first {
+    padding-right: 15px;
+}
+div.console form div.outline {
+    border: 1px solid #DDD;
+    display: inline-block;
 }

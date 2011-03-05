@@ -5,12 +5,54 @@
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
         <meta http-equiv="Content-language" content="en" />
         <link type="text/css" rel="stylesheet" href="css/styles.css" />
-        <link type="text/css" rel="stylesheet" href="css/themes/base/jquery.ui.all.css" />
-        <title></title>
+        
+        <title>PubSig Management Console</title>
 
+        <!-- ExtJS -->
+        <link rel="stylesheet" type="text/css" href="js/extjs/resources/css/ext-all.css" />
+        <script type="text/javascript" src="js/extjs/adapter/ext/ext-base.js"></script>
+        <script type="text/javascript" src="js/extjs/ext-all.js"></script>
+
+
+        <!-- Other ExtJS -->
+        <link rel="stylesheet" type="text/css" href="grid-examples.css" />
+        <link rel="stylesheet" type="text/css" href="js/extjs/shared/examples.css" />
+
+        <style type="text/css">
+            body .x-panel {
+                margin-bottom:20px;
+            }
+            .icon-grid {
+                background-image:url(js/extjs/shared/icons/fam/grid.png) !important;
+            }
+            .icon-clear-group {
+                background-image:url(js/extjs/shared/icons/fam/control_rewind.png) !important;
+            }
+            #button-grid .x-panel-body {
+                border:1px solid #99bbe8;
+                border-top:0 none;
+            }
+            .add {
+                background-image:url(js/extjs/shared/icons/fam/add.gif) !important;
+            }
+            .option {
+                background-image:url(js/extjs/shared/icons/fam/plugin.gif) !important;
+            }
+            .remove {
+                background-image:url(js/extjs/shared/icons/fam/delete.gif) !important;
+            }
+            .save {
+                background-image:url(js/extjs/shared/icons/save.gif) !important;
+            }
+        </style>
+
+
+        <!-- jQuery -->
         <script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
         <script type="text/javascript" src="js/jquery-ui-1.8.10.custom.min.js"></script>
+        <link type="text/css" rel="stylesheet" href="css/themes/base/jquery.ui.all.css" />
 
+        <!-- Startup -->
         <script type="text/javascript">
 
             $(document).ready(function() {
@@ -27,99 +69,39 @@
         </script>
     </head>
     <body>
-        <div class="tabs">
+        <div class="tabs console">
             <img src="images/logo.png" /><br />
             <div id="header-bar"></div>
             <table cellpadding="0" cellspacing="0">
                 <tr>
                     <td class="menu" align="left" valign="top" width="300">
                         <div class="menu">
-
                             <ul>
-                                <li><a href="#fragment-1"><span>Home</span></a></li>
-                                <li><a href="#fragment-2"><span>Messages</span></a></li>
-                                <li><a href="#fragment-3"><span>Create a Certificate</span></a></li>
-                                <li><a href="#fragment-4"><span>Sign a Certificate</span></a></li>
-                                <li><a href="#fragment-5"><span>Certificate Store</span></a></li>
-                                <li><a href="#fragment-6"><span>Signing Authorities</span></a></li>
+                                <li><a href="#home"><span>Home</span></a></li>
+                                <li><a href="#messages"><span>Messages</span></a></li>
+                                <li><a href="#create"><span>Create a Certificate</span></a></li>
+                                <li><a href="#sign"><span>Sign a Certificate</span></a></li>
+                                <li><a href="#manage"><span>Manage Certificates</span></a></li>
                             </ul>
-
                         </div>
                     </td>
                     <td align="left" valign="top" class="content">
                         <div class="content">
-
-                            <div id="fragment-1">
-                                <h2>Home</h2>
-                                <div class="body">
-                                    <p>Welcome to the PubSig management console. Please select an option from the menu to the left.</p>
-                                    <p><?php print str_repeat("&nbsp; ", 1000) ?></p>
-                                </div>
+                            <div id="home">
+                                <?php include("manager_home.php"); ?>
                             </div>
-
-
-                            <div id="fragment-2">
-                                <h2>Messages</h2>
-                                <div class="body">
-                                    <p>There are no messages to display.</p>
-                                    <p><?php print str_repeat("&nbsp; ", 1000) ?></p>
-                                </div>
+                            <div id="messages">
+                                <?php include("manager_messages.php"); ?>
                             </div>
-
-                            <div id="fragment-3">
-                                <h2>Create a Certificate</h2>
-                                <div class="body">
-                                    <p>This page allows you to create a new certificate along with a newly generated key pair. This can be used to create certificates for others or to setup the initial certificate that will be used by this Signing Authority.</p>
-
-                                    <form>
-                                        <div class="outline">
-                                            <h3>Certificate Fields</h3>
-                                            <div class="body">
-                                                <table cellpadding="0" cellspacing="0">
-                                                    <tr>
-                                                        <td align="left" valign="middle" nowrap class="first">Name:</td>
-                                                        <td align="left" valign="middle" width="300"><input type="text" name="name" value="" /></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td align="left" valign="middle" class="first">Comment:</td>
-                                                        <td align="left" valign="middle"><input type="text" name="comment" value="" /></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td align="left" valign="middle" class="first">JSON-RPC URL:</td>
-                                                        <td align="left" valign="middle"><input type="text" id="json_rpc_url" name="json_rpc_url" value="" /></td>
-                                                    </tr>
-                                                </table>
-
-                                                <p>
-                                                    <input type="checkbox" id="is_signing_authority" name="is_signing_authority" /><label for="is_signing_authority">This certificate will be used by a Signing Authority</label>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
+                            <div id="create">
+                                <?php include("manager_create_certificate.php"); ?>
                             </div>
-
-                            <div id="fragment-4">
-                                <h2>Sign a Certificate</h2>
-                                <div class="body">
-                                    <p><?php print str_repeat("&nbsp; ", 1000) ?></p>
-
-                                </div>
+                            <div id="sign">
+                                <?php include("manager_sign_certificate.php"); ?>
                             </div>
-
-                            <div id="fragment-5">
-                                <h2>Certificate Store</h2>
-                                <div class="body">
-                                    <p><?php print str_repeat("&nbsp; ", 1000) ?></p>
-                                </div>
+                            <div id="manage">
+                                <?php include("manager_manage_certificates.php"); ?>
                             </div>
-                            <div id="fragment-6">
-                                <h2>Signing Authorities</h2>
-                                <div class="body">
-                                    <p><?php print str_repeat("&nbsp; ", 1000) ?></p>
-                                </div>
-                            </div>
-
                         </div>
                     </td>
                 </tr>
