@@ -14,6 +14,7 @@
         
         <script type="text/javascript" src="js/extjs/adapter/ext/ext-base.js"></script>
         <script type="text/javascript" src="js/extjs/ext-all.js"></script>
+        <script type="text/javascript" src="js/print_r.js"></script>
 
 
         <!-- Other ExtJS -->
