@@ -22,6 +22,8 @@
             groupField:'reciprocal'
         });
 
+
+
     var grid = new xg.GridPanel({
         store: store,
         columns: [
@@ -37,23 +39,34 @@
             forceFit:true,
             groupTextTpl: '{text} ({[values.rs.length]} {[values.rs.length > 1 ? "Items" : "Item"]})'
         }),
-
-        frame:true,
-        width: 700,
+        frame:false,
+        width: 'auto',
         height: 450,
-        collapsible: true,
+        collapsible: false,
         animCollapse: false,
-        title: 'Trusted Certificates',
+       
         iconCls: 'icon-grid',
+
+        bbar : false,
+        fbar: false,
+        header: false,
+        border: true,
+
+        /*
+         title: 'Trusted Certificates',
         fbar  : ['->', {
             text:'Clear Grouping',
             iconCls: 'icon-clear-group',
             handler : function(){
                 store.clearGrouping();
             }
-        }],
+          
+        }],*/
         renderTo: document.getElementById('listview')
     });
+
+
+  
 });
 
 Ext.grid.lv_data = [
@@ -69,9 +82,10 @@ for(var i = 0; i < Ext.grid.lv_data.length; i++){
 <h2>Manage Certificates</h2>
 <div class="body">
 
-
-    <div id="listview"></div>
-     
+    <p>These are certificates that you have signed and trusted and certificates that have signed and trusted you (and you approve).</p>
+    <p>
+    <div id="listview" class="extjs"></div>
+     </p>
 
     <p><?php //print str_repeat("&nbsp; ", 1000) ?></p>
 </div>

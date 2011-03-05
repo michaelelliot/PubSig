@@ -6,7 +6,7 @@
         <div class="outline">
             <h3>Certificate Fields</h3>
             <div class="body">
-                <table cellpadding="0" cellspacing="0">
+                <table>
                     <tr>
                         <td align="left" valign="middle" nowrap class="first">Name:</td>
                         <td align="left" valign="middle" width="300"><input type="text" name="name" value="" /></td>

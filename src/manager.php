@@ -4,21 +4,26 @@
 
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
         <meta http-equiv="Content-language" content="en" />
-        <link type="text/css" rel="stylesheet" href="css/styles.css" />
+        
         
         <title>PubSig Management Console</title>
 
         <!-- ExtJS -->
-        <link rel="stylesheet" type="text/css" href="js/extjs/resources/css/ext-all.css" />
+        <link rel="stylesheet" type="text/css" href="js/extjs/resources/css/ext-all-notheme.css" />
+        <link rel="stylesheet" type="text/css" href="css/extjstheme.css" />
+        
         <script type="text/javascript" src="js/extjs/adapter/ext/ext-base.js"></script>
         <script type="text/javascript" src="js/extjs/ext-all.js"></script>
 
 
         <!-- Other ExtJS -->
+        <!--
         <link rel="stylesheet" type="text/css" href="grid-examples.css" />
         <link rel="stylesheet" type="text/css" href="js/extjs/shared/examples.css" />
+        -->
 
         <style type="text/css">
+            /**/
             body .x-panel {
                 margin-bottom:20px;
             }
@@ -46,7 +51,6 @@
             }
         </style>
 
-
         <!-- jQuery -->
         <script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
         <script type="text/javascript" src="js/jquery-ui-1.8.10.custom.min.js"></script>
@@ -67,6 +71,8 @@
                 $(".tabs").tabs();
             });
         </script>
+        <!-- Master CSS - Overrides all others -->
+        <link type="text/css" rel="stylesheet" href="css/styles.css" />
     </head>
     <body>
         <div class="tabs console">

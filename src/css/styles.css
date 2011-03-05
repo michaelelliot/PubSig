@@ -16,6 +16,12 @@ body, td, th, input, textarea {
     border-top: 1px solid #c0c0c0;
     margin-top: 15px;
 }
+table {
+    
+}
+p {
+
+}
 /*********************************************************
  * MANAGEMENT CONSOLE
  *********************************************************/
@@ -30,7 +36,7 @@ div.console div.content {
     border-width: 0 2px 2px 2px;
 }
 div.console div.body {
-    padding: 20px;
+    padding: 10px 20px 20px 10px;
     min-width: 700px;
     min-height: 500px;
 }
